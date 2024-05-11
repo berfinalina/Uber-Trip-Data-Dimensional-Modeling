@@ -1,0 +1,77 @@
+Google Cloud Console
+Cloud Storage
+New Bucket-Permission--> Access Control--> Fine grained--> Edit access-Public
+
+Compute Engine--> VM Instance--> Create Instance--> E2,Standart-4--> Connect SSH
+
+# Install Python and pip 
+
+sudo apt-get install update
+
+sudo apt-get install python3-distutils
+
+sudo apt-get install python3-apt
+
+sudo apt-get install wget
+
+wget https://bootstrap.pypa.io/get-pip.py
+
+sudo python3 get-pip.py
+
+
+# Install Mage
+sudo pip3 install mage-ai
+
+# Install Pandas
+sudo pip3 install pandas
+
+# Install Google Cloud Library
+
+sudo pip3 install google-cloud
+
+sudo pip3 install google-cloud-bigquery
+
+pip install db-dtypes  
+
+
+#Install project
+mage start "project_name" (I use uber_data_project)
+
+
+
+Turn the VM page and click what you had created and scroll down.
+Find the External IP Adress and add 'Check Point' from SSH screen.(Mine was 6789)
+Then add this point at the end of the IP with ':' mark. 
+Then refresh the IP page.
+
+
+On MageAI Create new and Copy the data URL from Google Cloud Console (GCP), Buckets.
+Paste it on the url'' between ('') tahn run it.
+
+Scroll down and click Transformer and add the Dimensional columns(tables) that created in python.
+
+On transformer page we'll see yaml file. Yaml file contains the credentials to connect with BigQuery and any other services.
+
+To find credentials go to GCP and search "API and Services". Click "Credentials" on the left bar. And create a new credential.(Service Account)
+
+Add rule as a role "BigQuery Admin"
+
+Click done. Scroll down the page and find the project that you had created and click.
+At "Keys" section "Add Key" and "Create a New Key". Select "JSON". Open file. These are all the credentials that available.
+
+Copy these lines and pasta it to which service you are using. I'm using Google_Service_ACC_Key.
+
+Search "BigQuery" on GCP and click. And create a new dataset with multi-region.
+
+On MageAi, Load page find table_id and add your table name at the end. Mine is fact_table that I had created before. 
+
+Then run it code and when it's all done refresh the BigQuery page and now, we'll see the new table.
+
+
+
+
+
+
+
+
+
